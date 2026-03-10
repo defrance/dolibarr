@@ -2,6 +2,7 @@
 /* Copyright (C) 2024		Frédéric France			<frederic.france@free.fr>
  * Copyright (C) 2024		MDW						<mdeweerd@users.noreply.github.com>
  * Copyright (C) 2024		sebastien schaffhauser	<sebastien@webmaster67.fr>
+ * Copyright (C) 2026		Charlene Benke			<charlene@patas-monkey.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -166,7 +167,7 @@ if ($reshook < 0) {
 if (empty($reshook)) {
 	if (!empty($hookmanager->resArray)) {
 		// @phan-suppress-next-line PhanPluginSuspiciousParamOrderInternal
-		$navMenu = array_replace($navMenu, $hookmanager->resArray);
+		$navMenu = array_merge($navMenu, $hookmanager->resArray);
 	}
 
 	if (!empty($navMenu)) {
