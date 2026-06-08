@@ -578,7 +578,7 @@ class FormListWebPortal
 		global $langs;
 
 		if (!empty($field_spec['arrayofkeyval']) && is_array($field_spec['arrayofkeyval'])) {
-			$out = $this->form->selectarray('search_' . $field_key, $field_spec['arrayofkeyval'], (isset($this->search[$field_key]) ? $this->search[$field_key] : ''), $field_spec['notnull'], 0, 0, '', 1, 0, 0, '', '');
+			$out = $this->form->selectarray('search_' . $field_key, $field_spec['arrayofkeyval'], (isset($this->search[$field_key]) ? $this->search[$field_key] : ''), (isset($field_spec['notnull'])?$field_spec['notnull']:0), 0, 0, '', 1, 0, 0, '', '');
 		} elseif (preg_match('/^(date|timestamp|datetime)/', $field_spec['type'])) {
 			$postDateStart = dol_mktime(
 				0,
